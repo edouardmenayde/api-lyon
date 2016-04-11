@@ -1,0 +1,21 @@
+{
+  "name": "api-velov",
+  "version": "0.0.1",
+  "description": "Velov api wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha -b"
+  },
+  "keywords": [
+    "velov",
+    "api"
+  ],
+  "author": "Scrunshes",
+  "license": "MIT",
+  "dependencies": {
+    "assert": "^1.3.0",
+    "extend": "^3.0.0",
+    "mocha": "^2.4.5",
+    "request": "^2.70.0"
+  }
+}
