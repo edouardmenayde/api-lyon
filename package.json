@@ -1,7 +1,7 @@
 {
-  "name": "api-velov",
-  "version": "0.0.2",
-  "description": "Velov api wrapper",
+  "name": "api-lyon",
+  "version": "0.0.1",
+  "description": "Lyon api wrapper",
   "main": "index.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha -b"
