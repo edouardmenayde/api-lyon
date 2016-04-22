@@ -1,7 +1,7 @@
 var assert  = require('assert'),
-    ApiLyon = require('../index'),
-    Stations= require('../lib/resources/velov/stations'),
-    Status  = require('../lib/resources/velov/status');
+    ApiLyon = require('../dist/index'),
+    Stations= require('../dist/lib/resources/velov/stations'),
+    Status  = require('../dist/lib/resources/velov/status');
 
 describe('ApiLyon', function () {
 
@@ -11,4 +11,5 @@ describe('ApiLyon', function () {
     assert(api.velov.stations instanceof Stations);
     assert(api.velov.status instanceof Status);
   });
+
 });
