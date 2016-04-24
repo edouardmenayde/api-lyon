@@ -1,8 +1,8 @@
 {
   "name": "api-lyon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lyon api wrapper",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha -b"
   },
