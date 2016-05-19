@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import request from 'request';
 
@@ -31,8 +31,8 @@ export default class Transport {
    */
   request (path) {
     var options = {
-      url     : this.buildUrl(path),
-      method  : 'get'
+      url   : this.buildUrl(path),
+      method: 'get'
     };
 
     return this.doRequest(options);
@@ -41,7 +41,7 @@ export default class Transport {
   /**
    * Execute request.
    *
-   * @param options
+   * @param {{}} options
    * @returns {Promise}
    */
   doRequest (options) {
@@ -51,11 +51,21 @@ export default class Transport {
           return reject({error: error});
         }
 
-        if (response.statusCode >= 400) {
-          return reject(body);
+        var workableBody = {
+          body: body
+        };
+
+        if (/^application\/json/.test(response.headers['content-type'])) {
+          workableBody = JSON.parse(body);
         }
 
-        return resolve(body);
+        if (response.statusCode >= 400) {
+          workableBody.statusCode = response.statusCode;
+
+          return reject(workableBody);
+        }
+
+        return resolve(workableBody);
       });
     });
   }

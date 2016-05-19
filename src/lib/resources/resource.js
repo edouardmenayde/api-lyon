@@ -1,36 +1,41 @@
+'use strict';
+
 export default class Resource {
 
   /**
-   * Constructor of resource.
+   * Constructor of repository.
    *
-   * @param transport
+   * @param {{}} transport
    */
   constructor (transport) {
     this.transport  = transport;
     this.table      = null;
     this.entryPoint = null;
     this.services   = {
-      web : 'ws',
-      wfs : 'wfs'
-    };
+      web: 'ws',
+      wfs: 'wfs'
+    }
   }
 
-  /***
+  /**
    * Find using wfs service.
    *
-   * @param options
+   * @param {{}} options
    * @returns {*}
    */
   findWfs (options = {}) {
     const suitableOptions = ['operation', 'version', 'format'];
 
     for (let option in options) {
+
       if (!options.hasOwnProperty(option)) {
         return Promise.reject({error: "Options given not valid."});
       }
+
       if (suitableOptions.indexOf(option) === -1) {
         return Promise.reject({error: "Options given not valid."});
       }
+
     }
 
     let url = this.services.wfs + '/' + this.entryPoint + '?service=wfs' +
@@ -42,10 +47,10 @@ export default class Resource {
     return this.transport.request(url);
   }
 
-  /***
+  /**
    * Find use web service.
    *
-   * @param options
+   * @param {{}} options
    * @returns {*}
    */
   findWeb (options = {}) {
@@ -55,13 +60,17 @@ export default class Resource {
     delete options.field;
 
     var index = 0;
+
     for (let option in options) {
+
       if (!options.hasOwnProperty(option)) {
         return Promise.reject({error: "Options given not valid."});
       }
+
       if (suitableOptions.indexOf(option) === -1) {
         return Promise.reject({error: "Options given not valid."});
       }
+
       endUrl += index ? '+' : '?' + `${option}=${options[option]}`;
       index += 1;
     }
@@ -72,14 +81,16 @@ export default class Resource {
   /**
    * Find use any service provided.
    *
-   * @param options
-   * @param service
+   * @param {{}} options
+   * @param {string} service
    * @returns {*}
    */
   find (options, service = 'web') {
+
     if (!options) {
       return this.get(service);
     }
+
     switch (service) {
       case 'web':
         return this.findWeb(options);
@@ -90,6 +101,7 @@ export default class Resource {
       default:
         return Promise.reject({error: "No service provided."});
     }
+
   }
 
   /**
@@ -98,7 +110,7 @@ export default class Resource {
    * @param service
    * @returns {*}
    */
-  get(service = 'web') {
+  get (service = 'web') {
     switch (service) {
       case 'web':
         return this.findWeb();
