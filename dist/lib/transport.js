@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 exports.__esModule = true;
 exports.default = undefined;
@@ -38,11 +38,21 @@ var Transport = function () {
           return reject({ error: error });
         }
 
-        if (response.statusCode >= 400) {
-          return reject(body);
+        var workableBody = {
+          body: body
+        };
+
+        if (/^application\/json/.test(response.headers['content-type'])) {
+          workableBody = JSON.parse(body);
         }
 
-        return resolve(body);
+        if (response.statusCode >= 400) {
+          workableBody.statusCode = response.statusCode;
+
+          return reject(workableBody);
+        }
+
+        return resolve(workableBody);
       });
     });
   };

@@ -23,9 +23,11 @@ var Resource = function () {
     var suitableOptions = ['operation', 'version', 'format'];
 
     for (var option in options) {
+
       if (!options.hasOwnProperty(option)) {
         return Promise.reject({ error: "Options given not valid." });
       }
+
       if (suitableOptions.indexOf(option) === -1) {
         return Promise.reject({ error: "Options given not valid." });
       }
@@ -45,13 +47,17 @@ var Resource = function () {
     delete options.field;
 
     var index = 0;
+
     for (var option in options) {
+
       if (!options.hasOwnProperty(option)) {
         return Promise.reject({ error: "Options given not valid." });
       }
+
       if (suitableOptions.indexOf(option) === -1) {
         return Promise.reject({ error: "Options given not valid." });
       }
+
       endUrl += index ? '+' : '?' + (option + '=' + options[option]);
       index += 1;
     }
@@ -62,9 +68,11 @@ var Resource = function () {
   Resource.prototype.find = function find(options) {
     var service = arguments.length <= 1 || arguments[1] === undefined ? 'web' : arguments[1];
 
+
     if (!options) {
       return this.get(service);
     }
+
     switch (service) {
       case 'web':
         return this.findWeb(options);

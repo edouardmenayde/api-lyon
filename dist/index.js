@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 exports.__esModule = true;
 exports.default = undefined;
@@ -33,9 +33,10 @@ var ApiLyon = function () {
 
     this.transport = new _transport2.default(this.options);
 
-    this.velov = {};
-    this.velov.stations = new _stations2.default(this.transport);
-    this.velov.status = new _status2.default(this.transport);
+    this.velov = {
+      stations: new _stations2.default(this.transport),
+      status: new _status2.default(this.transport)
+    };
   }
 
   _createClass(ApiLyon, [{
@@ -45,8 +46,7 @@ var ApiLyon = function () {
     },
     set: function set(options) {
       this._options = (0, _extend2.default)(true, {
-        endpoint: 'https://download.data.grandlyon.com/',
-        service: 'ws'
+        endpoint: 'https://download.data.grandlyon.com/'
       }, options);
     }
   }]);
