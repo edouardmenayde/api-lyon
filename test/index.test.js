@@ -1,11 +1,13 @@
-var assert  = require('assert'),
-    ApiLyon = require('../dist/index'),
-    Stations= require('../dist/lib/resources/velov/stations'),
-    Status  = require('../dist/lib/resources/velov/status');
+var assert   = require('assert'),
+    expect   = require('expect'),
+    ApiLyon  = require('../dist/index'),
+    Stations = require('../dist/lib/resources/velov/stations'),
+    Status   = require('../dist/lib/resources/velov/status');
 
-describe('ApiLyon', function () {
 
-  it('should instanciate all resources', function () {
+describe('Api', function () {
+
+  it('Should instantiate all resources in default mode', function () {
     var api = new ApiLyon();
 
     assert(api.velov.stations instanceof Stations);
