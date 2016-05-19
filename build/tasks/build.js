@@ -1,17 +1,17 @@
-var gulp        = require('gulp');
-var babel       = require('gulp-babel');
+var gulp  = require('gulp');
+var babel = require('gulp-babel');
 
 var options = {
-  filename: '',
+  filename        : '',
   filenameRelative: '',
-  sourceMap: true,
-  sourceRoot: '',
-  moduleIds: false,
-  comments: false,
-  compact: false,
-  code: true,
-  presets: [ 'es2015-loose', 'stage-1'],
-  plugins: [
+  sourceMap       : true,
+  sourceRoot      : '',
+  moduleIds       : false,
+  comments        : false,
+  compact         : false,
+  code            : true,
+  presets         : ['es2015-loose', 'stage-1'],
+  plugins         : [
     'syntax-flow',
     'transform-decorators-legacy',
     'transform-flow-strip-types',
