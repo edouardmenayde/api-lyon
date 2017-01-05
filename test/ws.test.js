@@ -13,11 +13,11 @@ describe('Ws', function () {
       });
 
       return api.velov.stations.get()
-        .then((response) => {
+        .then(function (response) {
           expect(response).toEqual(ws.velovStations);
           done();
         })
-        .catch(() => {
+        .catch(function () {
           done(new Error('Not getting 200'));
         });
 
@@ -33,11 +33,11 @@ describe('Ws', function () {
       });
 
       return api.velov.status.get()
-        .then((response) => {
+        .then(function (response) {
           expect(response).toEqual(ws.velovStationsStatus);
           done();
         })
-        .catch(() => {
+        .catch(function () {
           done(new Error('Not getting 200'));
         });
 
@@ -53,11 +53,11 @@ describe('Ws', function () {
       });
 
       return api.criter.camera.get()
-        .then((response) => {
+        .then(function (response) {
           expect(response).toEqual(ws.criterCamera);
           done();
         })
-        .catch(() => {
+        .catch(function () {
           done(new Error('Not getting 200'));
         });
 
@@ -73,11 +73,11 @@ describe('Ws', function () {
       });
 
       return api.criter.section.get()
-        .then((response) => {
+        .then(function (response) {
           expect(response).toEqual(ws.criterSection);
           done();
         })
-        .catch(() => {
+        .catch(function () {
           done(new Error('Not getting 200'));
         });
 
@@ -93,11 +93,11 @@ describe('Ws', function () {
       });
 
       return api.criter.traffic.get()
-        .then((response) => {
+        .then(function (response) {
           expect(response).toEqual(ws.criterTraffic);
           done();
         })
-        .catch(() => {
+        .catch(function () {
           done(new Error('Not getting 200'));
         });
 
@@ -113,11 +113,11 @@ describe('Ws', function () {
       });
 
       return api.tcl.upcomingPassages.get()
-        .then((response) => {
+        .then(function (response) {
           expect(response).toEqual(ws.tclUpcomingPassage);
           done();
         })
-        .catch(() => {
+        .catch(function () {
           done(new Error('Not getting 200'));
         });
 
@@ -133,11 +133,11 @@ describe('Ws', function () {
       });
 
       return api.tcl.stops.get()
-        .then((response) => {
+        .then(function (response) {
           expect(response).toEqual(ws.tclStops);
           done();
         })
-        .catch(() => {
+        .catch(function () {
           done(new Error('Not getting 200'));
         });
 

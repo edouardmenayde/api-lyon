@@ -12,11 +12,11 @@ describe('Wfs', function () {
       });
 
       return api.velov.stations.get('wfs')
-        .then((response) => {
+        .then(function (response) {
           expect(response).toEqual(wfs.velovStations);
           done();
         })
-        .catch(() => {
+        .catch(function () {
           done(new Error('Not getting 200'));
         });
     });
@@ -29,11 +29,11 @@ describe('Wfs', function () {
       });
 
       return api.velov.status.get('wfs')
-        .then((response) => {
+        .then(function (response) {
           expect(response).toEqual(wfs.velovStationStatus);
           done();
         })
-        .catch(() => {
+        .catch(function () {
           done(new Error('Not getting 200'));
         });
     });
@@ -46,11 +46,11 @@ describe('Wfs', function () {
       });
 
       return api.criter.camera.get('wfs')
-        .then((response) => {
+        .then(function (response) {
           expect(response).toEqual(wfs.criterCamera);
           done();
         })
-        .catch(() => {
+        .catch(function () {
           done(new Error('Not getting 200'));
         });
     });
@@ -64,11 +64,11 @@ describe('Wfs', function () {
       });
 
       return api.criter.section.get('wfs')
-        .then((response) => {
+        .then(function (response) {
           expect(response).toEqual(wfs.criterSection);
           done();
         })
-        .catch(() => {
+        .catch(function () {
           done(new Error('Not getting 200'));
         });
 
@@ -83,11 +83,11 @@ describe('Wfs', function () {
       });
 
       return api.criter.traffic.get('wfs')
-        .then((response) => {
+        .then(function (response) {
           expect(response).toEqual(wfs.criterTraffic);
           done();
         })
-        .catch(() => {
+        .catch(function () {
           done(new Error('Not getting 200'));
         });
 
@@ -101,11 +101,11 @@ describe('Wfs', function () {
       });
 
       return api.criter.event.get('wfs')
-        .then((response) => {
+        .then(function (response) {
           expect(response).toEqual(wfs.criterTrafficEvent);
           done();
         })
-        .catch(() => {
+        .catch(function () {
           done(new Error('Not getting 200'));
         });
 
@@ -119,11 +119,11 @@ describe('Wfs', function () {
       });
 
       return api.tcl.upcomingPassages.get('wfs')
-        .then((response) => {
+        .then(function (response) {
           expect(response).toEqual(wfs.tclUpcomingPassage);
           done();
         })
-        .catch(() => {
+        .catch(function () {
           done(new Error('Not getting 200'));
         });
 

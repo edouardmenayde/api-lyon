@@ -46,7 +46,7 @@ export default class Transport {
    */
   doRequest (options) {
     return new Promise(function (resolve, reject) {
-      request(options, (error, response, body) => {
+      request(options, function (error, response, body) {
         if (error) {
           return reject({error: error});
         }
