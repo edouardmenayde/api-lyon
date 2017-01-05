@@ -75,7 +75,9 @@ export default class Resource {
       index += 1;
     }
 
-    return this.transport.request(`${this.services.web}/${this.entryPoint}/${this.table}/${endUrl}`);
+    const url = `${this.services.web}/${this.entryPoint}/${this.table}/${endUrl}`;
+
+    return this.transport.request(url);
   }
 
   /**

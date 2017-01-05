@@ -30,7 +30,7 @@ export default class Transport {
    * @returns {*}
    */
   request (path) {
-    var options = {
+    const options = {
       url   : this.buildUrl(path),
       method: 'get'
     };

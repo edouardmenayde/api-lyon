@@ -18,7 +18,7 @@ var Resource = function () {
   }
 
   Resource.prototype.findWfs = function findWfs() {
-    var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
     var suitableOptions = ['operation', 'version', 'format'];
 
@@ -39,7 +39,7 @@ var Resource = function () {
   };
 
   Resource.prototype.findWeb = function findWeb() {
-    var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
     var suitableOptions = ['compact', 'maxfeature', 'start'];
 
@@ -62,11 +62,13 @@ var Resource = function () {
       index += 1;
     }
 
-    return this.transport.request(this.services.web + '/' + this.entryPoint + '/' + this.table + '/' + endUrl);
+    var url = this.services.web + '/' + this.entryPoint + '/' + this.table + '/' + endUrl;
+
+    return this.transport.request(url);
   };
 
   Resource.prototype.find = function find(options) {
-    var service = arguments.length <= 1 || arguments[1] === undefined ? 'web' : arguments[1];
+    var service = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'web';
 
 
     if (!options) {
@@ -86,7 +88,7 @@ var Resource = function () {
   };
 
   Resource.prototype.get = function get() {
-    var service = arguments.length <= 0 || arguments[0] === undefined ? 'web' : arguments[0];
+    var service = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'web';
 
     switch (service) {
       case 'web':

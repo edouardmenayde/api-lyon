@@ -17,6 +17,30 @@ var _status = require('./lib/resources/velov/status');
 
 var _status2 = _interopRequireDefault(_status);
 
+var _camera = require('./lib/resources/criter/camera');
+
+var _camera2 = _interopRequireDefault(_camera);
+
+var _traffic = require('./lib/resources/criter/traffic');
+
+var _traffic2 = _interopRequireDefault(_traffic);
+
+var _section = require('./lib/resources/criter/section');
+
+var _section2 = _interopRequireDefault(_section);
+
+var _event = require('./lib/resources/criter/event');
+
+var _event2 = _interopRequireDefault(_event);
+
+var _stops = require('./lib/resources/tcl/stops');
+
+var _stops2 = _interopRequireDefault(_stops);
+
+var _upcomingPassages = require('./lib/resources/tcl/upcomingPassages');
+
+var _upcomingPassages2 = _interopRequireDefault(_upcomingPassages);
+
 var _extend = require('extend');
 
 var _extend2 = _interopRequireDefault(_extend);
@@ -36,6 +60,18 @@ var ApiLyon = function () {
     this.velov = {
       stations: new _stations2.default(this.transport),
       status: new _status2.default(this.transport)
+    };
+
+    this.criter = {
+      camera: new _camera2.default(this.transport),
+      section: new _section2.default(this.transport),
+      traffic: new _traffic2.default(this.transport),
+      event: new _event2.default(this.transport)
+    };
+
+    this.tcl = {
+      stops: new _stops2.default(this.transport),
+      upcomingPassages: new _upcomingPassages2.default(this.transport)
     };
   }
 

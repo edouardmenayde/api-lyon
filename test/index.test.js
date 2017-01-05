@@ -1,4 +1,4 @@
-var assert   = require('assert'),
+const assert   = require('assert'),
     expect   = require('expect'),
     ApiLyon  = require('../dist/index'),
     Stations = require('../dist/lib/resources/velov/stations'),
@@ -7,11 +7,15 @@ var assert   = require('assert'),
 
 describe('Api', function () {
 
-  it('Should instantiate all resources in default mode', function () {
-    var api = new ApiLyon();
+  describe('new ApiLyon()', function () {
 
-    assert(api.velov.stations instanceof Stations);
-    assert(api.velov.status instanceof Status);
+    it('Should instantiate all resources in default mode', function () {
+      const api = new ApiLyon();
+
+      assert(api.velov.stations instanceof Stations);
+      assert(api.velov.status instanceof Status);
+    });
+
   });
 
 });
