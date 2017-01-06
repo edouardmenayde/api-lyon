@@ -26,7 +26,7 @@ module.exports = function () {
   });
 
   server.get('/auth', function (req, res) {
-    res.json(req.headers.authorization);
+    res.json(req.headers.authorization || null);
   });
 
   server.use(router);
