@@ -82,11 +82,7 @@ var ApiLyon = function () {
     },
     set: function set(options) {
       this._options = (0, _extend2.default)(true, {
-        endpoint: 'https://download.data.grandlyon.com/',
-        auth: {
-          login: null,
-          password: null
-        }
+        endpoint: 'https://download.data.grandlyon.com/'
       }, options);
     }
   }]);

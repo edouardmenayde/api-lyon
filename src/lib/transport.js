@@ -24,13 +24,22 @@ export default class Transport {
   }
 
   /**
-   * ConstructHeaders
+   * Test if headers should be constructed
+   *
+   * @returns {boolean}
+   */
+  shouldConstructHeaders() {
+    return !!this.options.auth;
+  }
+
+  /**
+   * Construct Headers with Authorizations
    *
    * @returns {{Authorization: string}}
    */
   constructHeaders() {
-    const login = this.options.auth.login;
-    const password = this.options.auth.password;
+    const login     = this.options.auth.login;
+    const password  = this.options.auth.password;
     const authToken = new Buffer(`${login}:${password}`).toString('base64');
     return {
       'Authorization': `Basic ${authToken}`
@@ -47,7 +56,7 @@ export default class Transport {
     const options = {
       url    : this.buildUrl(path),
       method : 'get',
-      headers: this.constructHeaders()
+      headers: this.shouldConstructHeaders() ? this.constructHeaders() : null
     };
 
     return this.doRequest(options);
