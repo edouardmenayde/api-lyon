@@ -1,13 +1,11 @@
-const assert   = require('assert'),
-      expect   = require('expect'),
-      ApiLyon  = require('../dist/index'),
-      Resource = require('../dist/lib/resources/resource');
-
+const assert    = require('assert'),
+      expect    = require('expect'),
+      ApiLyon   = require('../dist/index'),
+      Resource  = require('../dist/lib/resources/resource');
 
 describe('Resource', function () {
 
   describe('.get(randomStuff) : Get using bad service name', function () {
-
     it('Should return error', function (done) {
       const api      = new ApiLyon();
       const resource = new Resource(api.transport);
@@ -21,7 +19,6 @@ describe('Resource', function () {
           done();
         });
     });
-
   });
 
   describe('.find(randomStuff) : Find using bad service name', function () {

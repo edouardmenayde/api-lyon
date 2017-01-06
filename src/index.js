@@ -58,7 +58,11 @@ export default class ApiLyon {
    */
   set options(options) {
     this._options = extend(true, {
-      endpoint: 'https://download.data.grandlyon.com/'
+      endpoint: 'https://download.data.grandlyon.com/',
+      auth    : {
+        login   : null,
+        password: null
+      }
     }, options);
   }
 
