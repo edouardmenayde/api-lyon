@@ -16,8 +16,8 @@ describe('Wfs', function () {
           expect(response).toEqual(wfs.velovStations);
           done();
         })
-        .catch(function () {
-          done(new Error('Not getting 200'));
+        .catch(function (error) {
+          done(error);
         });
     });
   });
@@ -33,8 +33,8 @@ describe('Wfs', function () {
           expect(response).toEqual(wfs.velovStationStatus);
           done();
         })
-        .catch(function () {
-          done(new Error('Not getting 200'));
+        .catch(function (error) {
+          done(error);
         });
     });
   });
@@ -50,8 +50,8 @@ describe('Wfs', function () {
           expect(response).toEqual(wfs.criterCamera);
           done();
         })
-        .catch(function () {
-          done(new Error('Not getting 200'));
+        .catch(function (error) {
+          done(error);
         });
     });
   });
@@ -68,8 +68,8 @@ describe('Wfs', function () {
           expect(response).toEqual(wfs.criterSection);
           done();
         })
-        .catch(function () {
-          done(new Error('Not getting 200'));
+        .catch(function (error) {
+          done(error);
         });
 
     });
@@ -87,8 +87,8 @@ describe('Wfs', function () {
           expect(response).toEqual(wfs.criterTraffic);
           done();
         })
-        .catch(function () {
-          done(new Error('Not getting 200'));
+        .catch(function (error) {
+          done(error);
         });
 
     });
@@ -105,8 +105,8 @@ describe('Wfs', function () {
           expect(response).toEqual(wfs.criterTrafficEvent);
           done();
         })
-        .catch(function () {
-          done(new Error('Not getting 200'));
+        .catch(function (error) {
+          done(error);
         });
 
     });
@@ -123,8 +123,8 @@ describe('Wfs', function () {
           expect(response).toEqual(wfs.tclUpcomingPassage);
           done();
         })
-        .catch(function () {
-          done(new Error('Not getting 200'));
+        .catch(function (error) {
+          done(error);
         });
 
     });

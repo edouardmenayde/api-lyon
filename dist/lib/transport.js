@@ -22,10 +22,20 @@ var Transport = function () {
     return this.options.endpoint.replace(/\/$/, '') + path.replace(/^\w/, '\/$&');
   };
 
+  Transport.prototype.constructHeaders = function constructHeaders() {
+    var login = this.options.auth.login;
+    var password = this.options.auth.password;
+    var authToken = new Buffer(login + ':' + password).toString('base64');
+    return {
+      'Authorization': 'Basic ' + authToken
+    };
+  };
+
   Transport.prototype.request = function request(path) {
     var options = {
       url: this.buildUrl(path),
-      method: 'get'
+      method: 'get',
+      headers: this.constructHeaders()
     };
 
     return this.doRequest(options);

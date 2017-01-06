@@ -17,8 +17,8 @@ describe('Ws', function () {
           expect(response).toEqual(ws.velovStations);
           done();
         })
-        .catch(function () {
-          done(new Error('Not getting 200'));
+        .catch(function (error) {
+          done(error);
         });
 
     });
@@ -37,8 +37,8 @@ describe('Ws', function () {
           expect(response).toEqual(ws.velovStationsStatus);
           done();
         })
-        .catch(function () {
-          done(new Error('Not getting 200'));
+        .catch(function (error) {
+          done(error);
         });
 
     });
@@ -57,8 +57,8 @@ describe('Ws', function () {
           expect(response).toEqual(ws.criterCamera);
           done();
         })
-        .catch(function () {
-          done(new Error('Not getting 200'));
+        .catch(function (error) {
+          done(error);
         });
 
     });
@@ -77,8 +77,8 @@ describe('Ws', function () {
           expect(response).toEqual(ws.criterSection);
           done();
         })
-        .catch(function () {
-          done(new Error('Not getting 200'));
+        .catch(function (error) {
+          done(error);
         });
 
     });
@@ -98,7 +98,7 @@ describe('Ws', function () {
           done();
         })
         .catch(function () {
-          done(new Error('Not getting 200'));
+          done(error);
         });
 
     });
@@ -118,7 +118,7 @@ describe('Ws', function () {
           done();
         })
         .catch(function () {
-          done(new Error('Not getting 200'));
+          done(error);
         });
 
     });
@@ -137,8 +137,8 @@ describe('Ws', function () {
           expect(response).toEqual(ws.tclStops);
           done();
         })
-        .catch(function () {
-          done(new Error('Not getting 200'));
+        .catch(function (error) {
+          done(error);
         });
 
     });
