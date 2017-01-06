@@ -1,6 +1,6 @@
 # Api-lyon
 
-Documentation : [https://github.com/Scrunshes/api-lyon](https://github.com/Scrunshes/api-lyon-docs)
+Documentation : [https://scrunshes.gitbooks.io/api-lyon/content/](https://scrunshes.gitbooks.io/api-lyon/content/)
 
 ## Getting started
 

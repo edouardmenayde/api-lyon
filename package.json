@@ -1,14 +1,28 @@
 {
   "name": "api-lyon",
-  "version": "0.2.3",
-  "description": "Lyon api wrapper",
+  "version": "0.2.4",
+  "description": "Api for lyon open data",
   "main": "dist/index.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha -b"
   },
   "keywords": [
+    "bike",
     "velov",
-    "api"
+    "api",
+    "criter",
+    "traffic",
+    "lyon",
+    "open data",
+    "public transport",
+    "tcl",
+    "bus",
+    "road section",
+    "traffic event",
+    "bus stops",
+    "tram stops",
+    "subway stops",
+    "upcoming passages"
   ],
   "repository": {
     "type": "git",
