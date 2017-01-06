@@ -18,11 +18,11 @@ describe('Transport', function () {
       const api = new ApiLyon(options);
 
       api.transport.request('/auth')
-        .then(response => {
+        .then(function (response) {
           assert.equal(response, 'Basic ' + new Buffer(options.auth.login + ':' + options.auth.password).toString('base64'));
           done();
         })
-        .catch(error => {
+        .catch(function (error) {
           done(error);
         });
 
