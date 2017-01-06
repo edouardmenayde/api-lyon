@@ -22,6 +22,10 @@ var Transport = function () {
     return this.options.endpoint.replace(/\/$/, '') + path.replace(/^\w/, '\/$&');
   };
 
+  Transport.prototype.shouldConstructHeaders = function shouldConstructHeaders() {
+    return !!this.options.auth;
+  };
+
   Transport.prototype.constructHeaders = function constructHeaders() {
     var login = this.options.auth.login;
     var password = this.options.auth.password;
@@ -35,7 +39,7 @@ var Transport = function () {
     var options = {
       url: this.buildUrl(path),
       method: 'get',
-      headers: this.constructHeaders()
+      headers: this.shouldConstructHeaders() ? this.constructHeaders() : null
     };
 
     return this.doRequest(options);
