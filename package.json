@@ -1,6 +1,6 @@
 {
   "name": "api-lyon",
-  "version": "0.2.4",
+  "version": "0.2.6",
   "description": "Api for lyon open data",
   "main": "dist/index.js",
   "scripts": {
